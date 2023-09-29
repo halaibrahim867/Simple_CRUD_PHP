@@ -41,7 +41,11 @@ if(!$user){
             </tr>
             <tr>
                 <th>Website</th>
-                <td><?php echo $user['website']?></td>
+                <td>
+                    <a target="_blank" href="http://<?php echo $user['website']?>">
+                        <?php echo $user['website']?>
+                    </a>
+                </td>
             </tr>
 
 

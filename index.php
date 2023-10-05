@@ -1,5 +1,5 @@
 <?php
-require 'users.php';
+require 'users/users.php';
 
  $users=getUsers();
 
@@ -10,6 +10,7 @@ include 'partials/header.php';
         <table class="table">
             <thead>
             <tr>
+                <th>Image</th>
                 <th>Name</th>
                 <th>Username</th>
                 <th>Email</th>
@@ -21,6 +22,11 @@ include 'partials/header.php';
             <tbody>
             <?php foreach ($users as $user): ?>
                 <tr>
+                    <td>
+                        <?php if (isset($user['extension'])): ?>
+                            <img style="width:60px" src="<?php echo "users/images/${user['id']}.${user['extension']}"?>" alt="">
+                        <?php  endif;?>
+                    </td>
                     <td><?php echo $user['name']?></td>
                     <td><?php echo $user['username']?></td>
                     <td><?php echo $user['email']?></td>

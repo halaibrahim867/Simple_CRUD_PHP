@@ -1,6 +1,6 @@
 <?php
 include 'partials/header.php';
-require __DIR__.'/users.php';
+require __DIR__ . '/users/users.php';
 $userId=$_GET['id'];
 if(!isset($_GET['id'])){
    include 'partials/not_found.php';

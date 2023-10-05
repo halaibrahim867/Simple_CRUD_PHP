@@ -15,7 +15,12 @@ function getUserById($id)
     
 }
 function createUser($data){
-    
+    $users=getUsers();
+    $data['id']=rand(1000000,2000000);
+    $users[]=$data;
+    putJson($users);
+
+    return $data;
 }
 
 function updateUser($data, $id)
@@ -27,8 +32,7 @@ function updateUser($data, $id)
             $users[$i]= $updateUser=array_merge($user, $data);
         }
   }
-  file_put_contents(__DIR__ . '/users.json',json_encode($users, JSON_PRETTY_PRINT));
-
+  putJson($users);
   return $updateUser;
 }
 
@@ -47,4 +51,10 @@ function uploadImage($file,$user ){
 
     $user['extension']=$extension;
     updateUser($user, $user['id']);
+}
+
+function putJson($users)
+{
+    file_put_contents(__DIR__ . '/users.json',json_encode($users, JSON_PRETTY_PRINT));
+
 }

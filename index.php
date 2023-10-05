@@ -7,6 +7,10 @@ include 'partials/header.php';
 ?>
 
     <div class="container">
+        <p>
+            <a class="btn btn-outline-success" href="create-php">Create new User</a>
+        </p>
+        
         <table class="table">
             <thead>
             <tr>

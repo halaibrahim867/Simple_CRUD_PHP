@@ -15,11 +15,8 @@ if(!$user){
 
 if ($_SERVER['REQUEST_METHOD']=== "POST"){
     $user=updateUser($_POST,$userId);
+    uploadImage($_FILES['picture'], $user);
 
-
-    if(isset($_FILES['picture'])){
-        uploadImage($_FILES['picture'], $user);
-    }
    header('Location: index.php');
 }
 

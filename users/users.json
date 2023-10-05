@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "name": "hala ibrahim 4",
+        "name": "hala ibrahim1",
         "username": "halaibrahim123",
         "email": "halaibrahim123@gmail.com",
         "phone": "+2012234567",
@@ -10,16 +10,16 @@
     },
     {
         "id": 2,
-        "name": "hala ibrahim 2",
+        "name": "hala ibrahim1",
         "username": "halaibrahim123",
         "email": "halaibrahim123@gmail.com",
         "phone": "+2012234567",
         "website": "hala.org",
-        "extension": "jpeg"
+        "extension": ""
     },
     {
         "id": 3,
-        "name": "hala ibrahim",
+        "name": "hala ibrahim2",
         "username": "halaibrahim123",
         "email": "halaibrahim123@gmail.com",
         "phone": "+2012234567",

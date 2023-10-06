@@ -13,11 +13,27 @@ if(!$user){
     exit ;
 }
 
-if ($_SERVER['REQUEST_METHOD']=== "POST"){
-    $user=updateUser($_POST,$userId);
-    uploadImage($_FILES['picture'], $user);
+$errors=[
+    'name'=>"",
+    'username'=>"",
+    'email'=>"",
+    'phone'=>"",
+    'website'=>"",
+];
 
-   header('Location: index.php');
+if ($_SERVER['REQUEST_METHOD']=== "POST"){
+    $user=array_merge($user, $_POST);
+
+    $isValid=validateUser($user,$errors);
+
+    if($isValid){
+        $user=updateUser($_POST,$userId);
+
+        uploadImage($_FILES['picture'], $user);
+
+        header('Location: index.php');
+    }
+
 }
 
 ?>
